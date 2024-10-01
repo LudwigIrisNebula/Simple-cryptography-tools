@@ -97,4 +97,5 @@ scrollbar = ttk.Scrollbar(frame, orient=tk.VERTICAL, command=output_textbox.yvie
 scrollbar.grid(row=7, column=1, sticky=(tk.N, tk.S))
 output_textbox['yscrollcommand'] = scrollbar.set
 
+#ludwig NGC7023
 root.mainloop()
