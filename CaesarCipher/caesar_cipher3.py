@@ -43,6 +43,16 @@ def remove_spaces():
     input_textbox.delete("1.0", tk.END)
     input_textbox.insert(tk.END, input_text.replace(" ", ""))
 
+# def update_char_count(*args):
+#     input_text = input_textbox.get("1.0", "end-1c")
+#     char_count_label.config(text=f"Character Count: {len(input_text)}")
+
+def toggle_pin():
+    if root.attributes('-topmost'):
+        root.attributes('-topmost', False)
+    else:
+        root.attributes('-topmost', True)
+
 root = tk.Tk()
 root.title("Caesar Cipher Tool")
 
@@ -51,17 +61,21 @@ frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
 # ttk.Label(frame, text="Caesar Cipher").grid(row=0, column=0, sticky=tk.W)
 # ttk.Label(frame, text="shift cipher").grid(row=1, column=0, sticky=tk.W)
-ttk.Label(frame, text="<III III III III III III III III I \n \I III III III III III III III III").grid(row=0, column=1, sticky=tk.E)
+ttk.Label(frame, text="<III III III III III III III III I \n <I III III III III III III III III").grid(row=0, column=1, sticky=tk.E)
 ttk.Label(frame, text="(^_^)Ludwig NGC7023").grid(row=0, column=1, sticky=tk.E)
 ttk.Label(frame, text="Pa pz dypaalu pu jvkl~").grid(row=10, column=1, sticky=tk.N)
 
 style = ttk.Style()
-style.configure("Rounded.TEntry", borderwidth=10, relief="groove", background="white")
+style.configure("Rounded.TEntry", borderwidth=10, relief="groove", background="gray")
 
 input_label = ttk.Label(frame, text="----Input Text:")
 input_label.grid(row=0, column=0, sticky=tk.W)
 input_textbox = tk.Text(frame, width=40, height=5)
 input_textbox.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
+# input_textbox.bind('<<Modified>>', update_char_count)
+
+# char_count_label = ttk.Label(frame, text="                            Character Count:")
+# char_count_label.grid(row=2, column=0, columnspan=2, padx=5, pady=5)
 
 shift_label = ttk.Label(frame, text="1~25-Shift:")
 shift_label.grid(row=2, column=0, sticky=tk.W)
@@ -100,7 +114,7 @@ def open_encryption_window():
 
     root = tk.Toplevel()
     root.title("Super Encryption Windows")
-    root.attributes('-alpha', 0.9)  # 设置窗口透明度为90%
+    root.attributes('-alpha', 0.9)
 
     None_label = ttk.Label(root, text="III III III \n III III III")
     None_label.grid(row=4, column=12, padx=10, pady=0)
@@ -134,8 +148,10 @@ def open_encryption_window():
 
     root.mainloop()
 
-# Add this line after the definition of `remove_spaces_button`
 open_encryption_window_button = ttk.Button(frame, text="Open Super Encryption Windows", command=open_encryption_window)
 open_encryption_window_button.grid(row=9, column=0, columnspan=2, pady=5)
+
+pin_button = ttk.Button(frame, text="Pin/Unpin", command=toggle_pin)
+pin_button.grid(row=10, column=0, pady=5)
 
 root.mainloop()
