@@ -1,6 +1,8 @@
 # Simple cryptography tools
 
-这是一个简易的密码工具库，使用python实现，其中部分程序用nuitka编译成了单独的exe软件。![image](https://github.com/LudwigIrisNebula/Simple-cryptography-tools/blob/main/images/background1.png)
+这是一个简易的密码工具库，使用python实现(其中部分程序用nuitka编译成了单独的exe软件)，在之后会尝试使用其他的语言。
+这个库的代码复现了一些我本人因兴趣所了解的部分密码学知识，有各种极大的局限性，若要使用密码学工具更建议使用其他的在线密码工具和密码相关开源项目。
+![image](https://github.com/LudwigIrisNebula/Simple-cryptography-tools/blob/main/images/background1.png)
 
 
 ## textual analysis
